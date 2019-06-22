@@ -390,3 +390,14 @@ int ProcessParser::getTotalThreads()
     }
     return result;
 }
+
+  bool ProcessParser::isPidExisting(string pid)
+  {
+    vector<string>_list = ProcessParser::getPidList();
+    if(_list.size() == 0)
+    {
+      return false;
+    }
+    
+    return true;
+  }

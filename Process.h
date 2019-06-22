@@ -45,6 +45,11 @@ string Process::getPid() const
 }
 string Process::getProcess()
 {
+    if(!ProcessParser::isPidExisting(this->pid))
+    {
+      return "";
+    }
+  
     this->mem = ProcessParser::getVmSize(this->pid);
     this->up_time = ProcessParser::getProcUpTime(this->pid);
     this->cpu = ProcessParser::getCpuPercent(this->pid);
